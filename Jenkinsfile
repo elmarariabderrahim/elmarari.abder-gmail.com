@@ -11,12 +11,7 @@ pipeline {
 		     
         	    bat 'sh -c ./exp_script.sh'
                 
-		    foo = sh(
-				  returnStdout: true, 
-				  script: 'exp_script.sh'
-				)
-		   
-		    bat ' echo  $succes  ' 
+		    bat 'echo $succes'
             }
         }
 	   
