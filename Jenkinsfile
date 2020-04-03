@@ -10,7 +10,7 @@ pipeline {
 		     
                    
         	    bat 'sh -c ./exp_script.sh'
-		    for(e in env.properties){
+		    for(e in C:\Program Files (x86)\Jenkins\workspace\condition\env.properties){
 			 bat 'sh -c echo "${e}"'
 		    }
 		  
