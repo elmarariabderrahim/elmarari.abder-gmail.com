@@ -1,5 +1,5 @@
 #!/bin/bash
-succes="true" > env.properties
+
 
 
 if [ "1" -eq "1" ]; then
@@ -7,3 +7,4 @@ if [ "1" -eq "1" ]; then
 else 
   succes="false"
 fi
+echo s=$succes > env.properties
