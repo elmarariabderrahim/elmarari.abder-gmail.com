@@ -10,9 +10,13 @@ pipeline {
             steps {
 		     
         	    bat 'sh -c ./exp_script.sh'
-                bat ' echo  $succes  ' 
+                
+		    foo = sh(
+				  returnStdout: true, 
+				  script: 'exp_script.sh'
+				)
 		   
-		    
+		    bat ' echo  $succes  ' 
             }
         }
 	   
