@@ -10,7 +10,10 @@ pipeline {
 		     
                    
         	    bat 'sh -c ./exp_script.sh'
-		   bat 'sh -c echo "${succes}"'
+		    for(e in env){
+			 bat 'sh -c echo "${e}"'
+		    }
+		  
 		   
             }
         }
