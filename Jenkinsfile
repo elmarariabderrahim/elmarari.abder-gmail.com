@@ -8,10 +8,10 @@ pipeline {
         stage('generate_DDL') {
             steps {
 		     
-                      def String s=$succes
+                   
         	    bat 'sh -c ./exp_script.sh'
                 
-		    bat 'echo ${s}'
+		   
             }
         }
 	   
