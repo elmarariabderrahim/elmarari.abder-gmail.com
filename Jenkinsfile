@@ -4,14 +4,14 @@ pipeline {
     		PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"
 		 }
 		
-
+def String s=$succes
     stages {
         stage('generate_DDL') {
             steps {
 		     
         	    bat 'sh -c ./exp_script.sh'
                 
-		    bat 'echo $succes'
+		    bat 'echo ${s}'
             }
         }
 	   
