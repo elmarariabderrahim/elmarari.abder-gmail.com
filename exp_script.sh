@@ -1,3 +1,4 @@
+#!/bin/bash
 succes="true"
 
 nb1=$1
