@@ -9,13 +9,13 @@ pipeline {
         stage('generate_DDL') {
             steps {
 		     
-        	    bat 'sh -c ./exp_script.sh'
+        	    bat 'sh -c ./exp_script.sh 1 2'
                 bah 'echo $succes' 
 		   
 		    
             }
         }
-	   boolean testPassed = true
+	   
         stage('Import_schema_apply_scripts') {
             steps {
 		   
