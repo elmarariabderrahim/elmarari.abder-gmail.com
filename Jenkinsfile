@@ -9,7 +9,7 @@ pipeline {
         stage('generate_DDL') {
             steps {
 		     
-        	    bat 'sh -c ./exp_script.sh 2 2'
+        	    bat 'sh -c ./exp_script.sh'
                 bah 'echo $succes' 
 		   
 		    
