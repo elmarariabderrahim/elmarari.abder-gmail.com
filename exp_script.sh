@@ -1,5 +1,5 @@
 #!/bin/bash
-succes="true"
+succes="true" > env.properties
 
 
 if [ "1" -eq "1" ]; then
