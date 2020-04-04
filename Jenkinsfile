@@ -11,7 +11,7 @@ pipeline {
                    
         	    bat 'sh -c ./exp_script.sh'
 		    
-		   sh 'echo $succes'
+		 bat ' sh echo $succes'
 		   
 		  
 		  
