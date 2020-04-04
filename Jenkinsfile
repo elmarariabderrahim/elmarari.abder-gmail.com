@@ -11,9 +11,7 @@ pipeline {
                    
         	    bat 'sh -c ./exp_script.sh'
 		    
-		    for(e in C:\Program Files (x86)\Jenkins\workspace\condition\env.properties){
-			echo e + " is " + ${e}
-		    }
+		   sh 'echo $succes'
 		   
 		  
 		  
