@@ -11,7 +11,7 @@ pipeline {
                    
         	    bat 'sh -c ./exp_script.sh'
 		    
-		    bat '  echo ${env.PATH}'
+		    bat '  echo '$succes''
 		   
 		  
 		  
