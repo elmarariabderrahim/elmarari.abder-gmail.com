@@ -1,7 +1,7 @@
 pipeline {
     agent any 
 	 environment {
-    		PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH};C:\\Program Files (x86)\\Jenkins\\workspace\\condition\\env.properties"
+    		PATH = "C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\Git\\bin;${env.PATH}"
 		 }
 		
     stages {
@@ -10,7 +10,10 @@ pipeline {
 		     
                    
         	    bat 'sh -c ./exp_script.sh'
-		    
+		    foo = sh(
+			  returnStdout: true, 
+			  script: 'succes'
+			)
 		    bat '  echo ${succes}'
 		   
 		  
