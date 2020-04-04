@@ -10,7 +10,7 @@ pipeline {
 		     
                    
         	    bat 'sh -c ./exp_script.sh'
-		    bat 'sh echo $succes'
+		    bat ' echo $succes'
 		  
 		  
 		   
