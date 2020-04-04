@@ -8,3 +8,7 @@ else
   succes="false"
 fi
 echo succes=$succes > env.properties
+foo = sh(
+  returnStdout: true, 
+  script: 'succes'
+)
