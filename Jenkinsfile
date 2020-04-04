@@ -10,10 +10,7 @@ pipeline {
 		     
                    
         	    bat 'sh -c ./exp_script.sh'
-		    foo = sh(
-			  returnStdout: true, 
-			  script: 'succes'
-			)
+		   
 		    bat '  echo ${succes}'
 		   
 		  
