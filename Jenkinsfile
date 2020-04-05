@@ -17,11 +17,6 @@ pipeline {
 		   
         	   bat 'sh -c ./add_to_container.sh'            }
         }
-        stage('Apply_to_db') {
-            steps {
-		    
-        	    bat 'sh -c ./apply_scripts_db.sh'  
-            }
-        }
+        
     }
 }
