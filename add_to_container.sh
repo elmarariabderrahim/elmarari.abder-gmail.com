@@ -41,21 +41,7 @@ for f in sql_scripts/*; do
 	mysql -uroot -ppixid123 -Bse "use db5;insert into scripts (script_name,script_state) values('$script_name','failed');"
  fi
 done
-echo $flag
-if [ $flag = 'false' ]; then 
- echo " script incorecte"
- else
-IFS=':'
-for f in sql_scripts/*; do
-input="./$f"
-varrr=""
-while IFS= read -r line
-do
-varrr="${varrr}$line"
-done < "$input"
-mysql -uroot -ppixid123 -Bse "$varrr"
-done
-fi
+
 
 
 
