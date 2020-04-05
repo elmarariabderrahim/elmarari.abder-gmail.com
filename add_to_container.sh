@@ -41,6 +41,18 @@ for f in sql_scripts/*; do
  fi
 done
 echo $flag
+if [ $flag = 'true' ]; then 
+IFS=':'
+for f in sql_scripts/*; do
+input="./$f"
+varrr=""
+while IFS= read -r line
+do
+varrr="${varrr}$line"
+done < "$input"
+mysql -uroot -ppixid123 -Bse "$varrr"
+done
+fi
 
 
 
