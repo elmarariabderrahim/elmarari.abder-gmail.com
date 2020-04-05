@@ -9,7 +9,7 @@ mysql -P $docker_mysql_port --protocol=tcp -u root -ppixid123
 
 path=$(pwd)
 echo $path
-input="C:\Program Files (x86)\Jenkins\workspace\pipeline_v1\logfile.txt"
+input="${docker_mysql_port}/logfile.txt"
 var=""
 while IFS= read -r line
 do
