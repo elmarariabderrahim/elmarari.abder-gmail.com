@@ -41,7 +41,9 @@ for f in sql_scripts/*; do
  fi
 done
 echo $flag
-if [ $flag = 'true' ]; then 
+if [ $flag = 'false' ]; then 
+ echo " script incorecte"
+ else
 IFS=':'
 for f in sql_scripts/*; do
 input="./$f"
