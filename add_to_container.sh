@@ -33,6 +33,7 @@ for f in sql_scripts/*; do
  if [ "$?" -eq 0 ]; then 
  echo " le script $script_name est passer par succes"
  flag='true'
+ mysql -uroot -ppixid123 -Bse "$varrr"
 	mysql -uroot -ppixid123 -Bse "use db5;insert into scripts (script_name,script_state) values('$script_name','succes');"
  else
  echo " le script ${script_name} a échoué"
