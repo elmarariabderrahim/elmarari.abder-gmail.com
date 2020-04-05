@@ -1,14 +1,4 @@
-#!/bin/bash
+export CLASSPATH=./lib/mysql-connector-java-5.1.48-bin.jar
+queries="$(groovy class_script.gvy)"
+echo "${queries}" | tee logfile.txt
 
-
-
-if [ "1" -eq "1" ]; then
-  succes="true"
-else 
-  succes="false"
-fi
-echo succes=$succes > env.properties
-foo = sh(
-  returnStdout: true, 
-  script: 'succes'
-)
