@@ -5,10 +5,12 @@ IFS=':'
 read -ra ADDR <<< "$str"
 docker_mysql_port=${ADDR[1]}
 echo ${docker_mysql_port}
+# acces to docker image 'test-mysql'
 mysql -P $docker_mysql_port --protocol=tcp -u root -ppixid123 
 
 path=$(pwd)
-echo $path
+
+# import database schema 
 input="$path/logfile.txt"
 var=""
 while IFS= read -r line
@@ -17,7 +19,7 @@ var="${var}$line"
 done < "$input"
 mysql -P $docker_mysql_port --protocol=tcp -uroot -ppixid123 -Bse "$var"
 
-
+# scripts application on docker image 
 IFS=':'
 for f in sql_scripts/*; do
  input="./$f"
@@ -32,12 +34,12 @@ for f in sql_scripts/*; do
 
  if [ "$?" -eq 0 ]; then 
  echo " le script $script_name est passer par succes"
- flag='true'
+ 
  mysql -uroot -ppixid123 -Bse "$varrr"
 	mysql -uroot -ppixid123 -Bse "use db5;insert into scripts (script_name,script_state) values('$script_name','succes');"
  else
  echo " le script ${script_name} a échoué"
- flag='false'
+ 
 	mysql -uroot -ppixid123 -Bse "use db5;insert into scripts (script_name,script_state) values('$script_name','failed');"
  fi
 done
